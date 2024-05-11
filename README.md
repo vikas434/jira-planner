@@ -17,3 +17,5 @@ This Python script simulates Jira task, project, and resource changes by reading
 2. Install required Python packages:
    ```bash
    pip3 install -r requriements.txt
+
+docker exec -it 487c0e96e0cd ksql http://ksqldb-server:8088

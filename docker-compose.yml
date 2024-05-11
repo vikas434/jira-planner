@@ -6,6 +6,8 @@ services:
       - "2181:2181"
     environment:
       ALLOW_ANONYMOUS_LOGIN: "yes"
+    platform: linux/amd64  # Added platform specification
+
   kafka:
     image: bitnami/kafka:latest
     ports:
@@ -17,3 +19,27 @@ services:
       ALLOW_PLAINTEXT_LISTENER: "yes"
     depends_on:
       - zookeeper
+    platform: linux/amd64  # Added platform specification
+
+#  ksqldb-server:
+#    image: confluentinc/ksqldb-server:latest
+#    ports:
+#      - "8088:8088"
+#    environment:
+#      KSQL_LISTENERS: "http://0.0.0.0:8088"
+#      KSQL_BOOTSTRAP_SERVERS: "PLAINTEXT://kafka:9092"
+#      KSQL_LOGGING_PROCESSING_STREAM_AUTO_CREATE: "true"
+#      KSQL_LOGGING_PROCESSING_TOPIC_AUTO_CREATE: "true"
+#    depends_on:
+#      - kafka
+#    platform: linux/amd64  # Addstoped platform specification
+
+#  ksqldb-cli:
+#    image: confluentinc/ksqldb-cli:latest
+#    environment:
+#      KSQL_CONFIG_DIR: "/etc/ksql"
+#    entrypoint: /bin/sh
+#    tty: true
+#    depends_on:
+#      - ksqldb-server
+#    platform: linux/amd64  # Added platform specification
