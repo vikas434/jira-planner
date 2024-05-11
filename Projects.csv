@@ -1,0 +1,6 @@
+project_id,manager,actual_cost,budget_cost,location
+P1,Alice,1200000,1500000,New York
+P2,Bob,1500000,700000,San Francisco
+P3,Carol,150000,200000,Boston
+P4,Dave,900000,800000,Chicago
+P5,Eve,2200000,2000000,Los Angeles
